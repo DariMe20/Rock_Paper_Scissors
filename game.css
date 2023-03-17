@@ -1,51 +1,75 @@
-body{
-    /* background-image: url('https://www.matrise.no/wp-content/uploads/2020/11/metaverse_illustration-scaled.jpg'); */
+body {
+    background-image: url('https://www.matrise.no/wp-content/uploads/2020/11/metaverse_illustration-scaled.jpg');
     background-size: cover;
     background-attachment: fixed;
     background-position: center;
     /* border: 1px solid rgb(194, 95, 95); */
     font-family: 'Source Sans Pro', sans-serif;
     text-align: center;
-   
+    align-items: center;
+    color: white;
+    display:flex;
+    flex-direction: column;
+
 }
 
-h1{
+h1 {
     font-family: 'Source Code Pro', monospace;
     position: relative;
 }
 
-hr{
-    display:relative;
-    width:80%;
+hr {
+    display: relative;
+    width: 80%;
 
 }
-h3{
+
+h3 {
     font-family: 'Source Code Pro', monospace;
     display: block;
     position: relative;
+    font-size: 20px;
 }
 
-.play_container{
-    display:flex;
+.play_container {
+    display: flex;
     flex-direction: row;
     flex-wrap: wrap;
-    border: 1px solid green;
-    position:relative;
-    top:50px;
+    position: relative;
+    top: 80px;
+    align-content: center;
 }
 
-.play_container .choice_container{
-    border: 1px solid pink;
-    flex:1;
+.play_container .choice_container {
+
+    flex: 1;
+    margin: 15px;
+    border-radius: 50%;
 }
 
-.play_container .choice_container .choice_img img{
-    width:100%;
+.play_container .choice_container button {
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+.play_container .choice_container .choice_img img {
+    width: 100%;
     height: auto;
+
 }
 
-/* .round_container{
-    position:relative;
+.round_container {
+    position: relative;
     top: 60px;
-    
-} */
+}
+
+.round_container p{
+    font-family: 'Source Code Pro', monospace;
+    font-size: 22px;
+    background: black;
+    width: fit-content;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    font-weight: 500;
+}
