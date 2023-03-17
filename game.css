@@ -6,6 +6,7 @@ body{
     /* border: 1px solid rgb(194, 95, 95); */
     font-family: 'Source Sans Pro', sans-serif;
     text-align: center;
+   
 }
 
 h1{
@@ -38,8 +39,13 @@ h3{
     flex:1;
 }
 
-.play_container .choice_container button img{
+.play_container .choice_container .choice_img img{
     width:100%;
     height: auto;
-
 }
+
+/* .round_container{
+    position:relative;
+    top: 60px;
+    
+} */
