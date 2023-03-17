@@ -1,7 +1,45 @@
 body{
-    background-image: url('https://www.matrise.no/wp-content/uploads/2020/11/metaverse_illustration-scaled.jpg');
+    /* background-image: url('https://www.matrise.no/wp-content/uploads/2020/11/metaverse_illustration-scaled.jpg'); */
     background-size: cover;
     background-attachment: fixed;
     background-position: center;
+    /* border: 1px solid rgb(194, 95, 95); */
+    font-family: 'Source Sans Pro', sans-serif;
+    text-align: center;
+}
+
+h1{
+    font-family: 'Source Code Pro', monospace;
+    position: relative;
+}
+
+hr{
+    display:relative;
+    width:80%;
+
+}
+h3{
+    font-family: 'Source Code Pro', monospace;
+    display: block;
+    position: relative;
+}
+
+.play_container{
+    display:flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    border: 1px solid green;
+    position:relative;
+    top:50px;
+}
+
+.play_container .choice_container{
+    border: 1px solid pink;
+    flex:1;
+}
+
+.play_container .choice_container button img{
+    width:100%;
+    height: auto;
 
 }

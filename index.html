@@ -4,13 +4,15 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Rock, Paper, Scissors</title>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Source+Code+Pro%7CSource+Sans+Pro&display=swap" rel="stylesheet">
+        <title>Rock, Paper, Scissors</title>
     <link rel="stylesheet" href="game.css">
-
+    <script src="game.js"></script>
     
 </head>
 <body>
-    <script src="game.js"></script>
+    
     <!-- <div class="opening_container">
         <p>Long, long ago...you were locked by a wicken AI into a virtual world.</p>
         <p>After many battles to come back in the real world, you finally reached the final boss.</p>
@@ -18,6 +20,46 @@
         <p>ROCK PAPER SCISSORS</p>
         </p>
     </div> -->
+
+    <h1>Rock Paper Scissors</h1>
+    <hr>
+    <h3>Choose your fate</h3>
+    <div class="play_container">
+          
+        <div class="choice_container">
+            <button class="choice_img">
+                <img src ="https://thenounproject.com/api/private/icons/88661/edit/?backgroundShape=SQUARE&backgroundShapeColor=%23000000&backgroundShapeOpacity=0&exportSize=752&flipX=false&flipY=false&foregroundColor=%23000000&foregroundOpacity=1&imageFormat=png&rotation=0&token=gAAAAABkFOGTQxq-LEguzahxZrnxbWERC5pXQQ64SIqHfdHm3yTeUlX3VGDa5jrnpdCW8Hn9JO-1o1lIqW9ONMD6zekq05VXSA%3D%3D" 
+                alt="Image of rock hand sign">
+            </button>
+
+        </div>
+        <div class="choice_container">
+            <button class="choice_img">
+                <img src ="https://thenounproject.com/api/private/icons/88662/edit/?backgroundShape=SQUARE&backgroundShapeColor=%23000000&backgroundShapeOpacity=0&exportSize=752&flipX=false&flipY=false&foregroundColor=%23000000&foregroundOpacity=1&imageFormat=png&rotation=0&token=gAAAAABkFOGTQxq-LEguzahxZrnxbWERC5pXQQ64SIqHfdHm3yTeUlX3VGDa5jrnpdCW8Hn9JO-1o1lIqW9ONMD6zekq05VXSA%3D%3D" 
+                alt="Image of paper hand sign">
+            </button>
+        </div>
+        <div class="choice_container">
+            <button class="choice_img">
+                <img src ="https://thenounproject.com/api/private/icons/88666/edit/?backgroundShape=SQUARE&backgroundShapeColor=%23000000&backgroundShapeOpacity=0&exportSize=752&flipX=false&flipY=false&foregroundColor=%23000000&foregroundOpacity=1&imageFormat=png&rotation=0&token=gAAAAABkFOGTQxq-LEguzahxZrnxbWERC5pXQQ64SIqHfdHm3yTeUlX3VGDa5jrnpdCW8Hn9JO-1o1lIqW9ONMD6zekq05VXSA%3D%3D" 
+                alt="Image of paper hand sign">
+            </button>
+        </div>
+    </div>
+
+    <div class="round_container">
+        <p>Round <span id=#r1></span></p>
+
+    </div>
+
+    <div class="lives_container">
+        <div class="player_container">
+
+        </div>
+        <div class="player_container">
+            
+        </div>
+    </div>
     
 </body>
 </html>
