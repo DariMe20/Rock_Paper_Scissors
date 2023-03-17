@@ -61,6 +61,9 @@ h3 {
 .round_container {
     position: relative;
     top: 60px;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
 }
 
 .round_container p{
@@ -68,10 +71,9 @@ h3 {
     font-size: 22px;
     background: black;
     width: fit-content;
-    align-items: center;
-    justify-content: center;
     text-align: center;
     font-weight: 500;
+
 }
 
 .lives_container{
