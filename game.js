@@ -58,7 +58,8 @@ function game(computerSelection) {
             ComputerPoints++;
 
         //print current result
-        console.log("Round: " + (i+1) + " Now the score is: Player - " + PlayerPoints + " Computer - " + ComputerPoints);
+        console.log("Round: " + (i+1) + " Now the score is: Player - " + 
+        PlayerPoints + " Computer - " + ComputerPoints);
     }
     //print final result
     if (PlayerPoints > ComputerPoints)
@@ -70,4 +71,4 @@ function game(computerSelection) {
 
 }
 
-console.log(game());
+//console.log(game());
