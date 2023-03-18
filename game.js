@@ -15,12 +15,12 @@ function playRound(ComputerSelection, PlayerSelection) {
         if (PlayerSelection == "paper")
             return ("You won! Paper beats Rock!");
         else if (PlayerSelection == "scissors")
-            return ("You lose! Rock beats Scissors!");
+            return ("You lost! Rock beats Scissors!");
 
     }
     if (ComputerSelection == "paper") {
         if (PlayerSelection == "rock")
-            return ("You lose! Paper beats Rock!");
+            return ("You lost! Paper beats Rock!");
         if (PlayerSelection == "scissors")
             return ("You won! Scissors beats Paper!");
     }
@@ -29,47 +29,82 @@ function playRound(ComputerSelection, PlayerSelection) {
         if (PlayerSelection == "rock")
             return ("You won! Rock beats Scissors!");
         else if (PlayerSelection == "paper")
-            return ("You lose! Scissors beats Paper!");
+            return ("You lost! Scissors beats Paper!");
     }
 
 }
 
-function game(computerSelection) {
-    let PlayerPoints = 0;
-    let ComputerPoints = 0;
+//adding an event listener to handle players choice 
+document.querySelectorAll('.choice_container button').forEach(button => {
+    button.addEventListener('click', () => {
+        //read player choice
+        let PlayerSelection = button.querySelector('img').alt.toLowerCase();
 
-    for (let i = 0; i < 5; i++) {
-        //Read player option
-        let player = prompt("Please enter rock/paper/scissors:"); //This entering will be case sensitive
-        let playerSelection = player.toLowerCase(); //this makes the entering case insensitive by lowecasing the input 
+        //generate computer choice
+        let ComputerSelection = getComputerChoice();
 
-        //Generate computer option
-        const computerSelection = getComputerChoice();
+        //play round for the player selection
+        let result = playRound(ComputerSelection, PlayerSelection);
 
-        //play round
-        console.log(playRound(computerSelection, playerSelection));
-
-        //calculate points
-        let text = playRound(computerSelection, playerSelection);
-        let result = text.slice(0, 9);
-        if (result == "You won! ")
+        //update points
+        let P_points = document.getElementById('PlayerPoits');
+        let C_points = document.getElementById('ComputerPoints');
+        //convert the text to int to use for mathematical operations
+        let PlayerPoints = parseInt(P_points.textContent);
+        let ComputerPoints = parseInt(C_points.textContent);
+        //check the result to update points
+        if(result.includes("You won!")){
             PlayerPoints++;
-        else if(result == "You lose!")
+            //go back to string format
+            P_points.textcontent = PlayerPoints.toString();
+        }
+        if(result.includes("You lsot!")){
             ComputerPoints++;
+            //go back to string format
+            C_points.textcontent = ComputerPoints.toString();
+        }
 
-        //print current result
-        console.log("Round: " + (i+1) + " Now the score is: Player - " + 
-        PlayerPoints + " Computer - " + ComputerPoints);
-    }
-    //print final result
-    if (PlayerPoints > ComputerPoints)
-        return "Player wins";
-    else if (PlayerPoints < ComputerPoints)
-        return "Computer wins"
-    else if (PlayerPoints == ComputerPoints)
-        return "Its a draw";
 
-}
+    }) 
+})
+   
+
+// function game(computerSelection) {
+//     let PlayerPoints = 0;
+//     let ComputerPoints = 0;
+
+//     for (let i = 0; i < 5; i++) {
+//         //Read player option
+//         let player = prompt("Please enter rock/paper/scissors:"); //This entering will be case sensitive
+//         let playerSelection = player.toLowerCase(); //this makes the entering case insensitive by lowecasing the input 
+
+//         //Generate computer option
+//         const computerSelection = getComputerChoice();
+
+//         //play round
+//         console.log(playRound(computerSelection, playerSelection));
+
+//         //calculate points
+//         let text = playRound(computerSelection, playerSelection);
+//         let result = text.slice(0, 9);
+//         if (result == "You won! ")
+//             PlayerPoints++;
+//         else if(result == "You lose!")
+//             ComputerPoints++;
+
+//         //print current result
+//         console.log("Round: " + (i+1) + " Now the score is: Player - " + 
+//         PlayerPoints + " Computer - " + ComputerPoints);
+//     }
+//     //print final result
+//     if (PlayerPoints > ComputerPoints)
+//         return "Player wins";
+//     else if (PlayerPoints < ComputerPoints)
+//         return "Computer wins"
+//     else if (PlayerPoints == ComputerPoints)
+//         return "Its a draw";
+
+// }
 
 //console.log(game());
 
