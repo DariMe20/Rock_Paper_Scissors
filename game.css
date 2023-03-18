@@ -90,9 +90,13 @@ h3 {
 
 }
 
-.final_message{
+.game_over{
 
     color:red;
+    position: relative;
+    top:50px;
+    width:200px;
+    border: 1px solid white;
 }
 
 @media screen and (min-width: 1000px){
