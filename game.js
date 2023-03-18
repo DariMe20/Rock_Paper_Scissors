@@ -43,7 +43,7 @@ document.querySelectorAll('.choice_container button').forEach(button => {
         //generate computer choice
         let ComputerSelection = getComputerChoice();
 
-        //play round for the player selection
+        //play round for the current player selection
         let result = playRound(ComputerSelection, PlayerSelection);
 
         //update points
@@ -64,7 +64,13 @@ document.querySelectorAll('.choice_container button').forEach(button => {
             C_points.textcontent = ComputerPoints.toString();
         }
 
+        //update round
+        let R_number = document.getElementById('RoundNumber');
+        let round_number = parseInt(R_number.textContent);
+        //increment round and convert back to string
+        R_number.textContent = (round_number + 1).toString();
 
+        
     }) 
 })
    
