@@ -35,6 +35,18 @@ function playRound(ComputerSelection, PlayerSelection) {
             return "You lost! Scissors beats Paper!";
     }
 
+    if(completed_rounds == 5)
+    {
+        if (PlayerPoints > ComputerPoints) {
+            return "Congratulations! You have won the game!";
+          } else if (ComputerPoints > PlayerPoints) {
+            return "Sorry! The computer has won the game";
+          } else {
+            return "It's a draw! Good Game!";
+          }
+    }
+
+
 }
 
 //adding an event listener to handle players choice 
@@ -98,16 +110,7 @@ document.querySelectorAll('.choice_img').forEach(button => {
     })
 });
 
-    function displayGameResult(PlayerPoints, ComputerPoints){
-        let final_message_Element = document.getElementById('final_message');
-        if (PlayerPoints > ComputerPoints) {
-            final_message_Element.textContent = "Congratulations! You have won the game!";
-          } else if (ComputerPoints > PlayerPoints) {
-            final_message_Element.textContent = "Sorry! The computer has won the game";
-          } else {
-            final_message_Element.textContent = "It's a draw! Good Game!";
-          }
-    }
+
 
 // function game(computerSelection) {
 //     let PlayerPoints = 0;
