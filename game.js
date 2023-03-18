@@ -10,31 +10,13 @@ function getComputerChoice() {
     return options[Math.floor(Math.random() * options.length)];
 }
 
-//function to reset the game 
-function resetGame() {
-    completed_rounds = 0;
-    PlayerPoints = 0;
-    ComputerPoints = 0;
-    document.getElementById("PlayerPoints").textContent = "0";
-    document.getElementById("ComputerPoints").textContent = "0";
-    document.getElementById("RoundNumber").textContent = "1";
-    document.getElementById("RoundResult").textContent = "";
-    document.getElementById("game_over").style.display = "none";
-    document.getElementById("try_again_button").style.display = "none";
-}
 
+//function to return the result of the round 
 function playRound(ComputerSelection, PlayerSelection) {
     if (completed_rounds === 5) {
-        if (completed_rounds === 5) {
-            if (PlayerPoints > ComputerPoints) {
-              return "Congratulations! You have won the game!";
-            } else if (ComputerPoints > PlayerPoints) {
-              return "Sorry! The computer has won the game";
-            } else {
-              return "It's a draw! Good Game!";
-            }
-          }
-    }
+        displayGameResult(PlayerPoints, ComputerPoints);
+        }
+    
     if (ComputerSelection === PlayerSelection) {
         return "It's a draw";
     }
@@ -60,42 +42,57 @@ function playRound(ComputerSelection, PlayerSelection) {
     }
 }
 
+//function to update the scores
+function updateScore(result) {
+    const P_points = document.getElementById("PlayerPoints");
+    const C_points = document.getElementById("ComputerPoints");
+
+    if (result.includes("You won!")) {
+        PlayerPoints++;
+        P_points.textContent = PlayerPoints.toString();
+    } else if (result.includes("You lost!")) {
+        ComputerPoints++;
+        C_points.textContent = ComputerPoints.toString();
+    }
+}
+
+
+//function to display the result of the game
+function displayGameResult(PlayerPoints, ComputerPoints) {
+    let result = "";
+    if (PlayerPoints > ComputerPoints) {
+        result = "Congratulations! You have won the game!";
+    } else if (ComputerPoints > PlayerPoints) {
+        result = "Sorry! The computer has won the game";
+    } else {
+        result = "It's a draw! Good Game!";
+    }
+    document.getElementById("game_over_result").textContent = result;
+    document.getElementById("game_over").style.display = "block";
+    document.getElementById("try_again_button").style.display = "block";
+}
+
 
 
 //adding an event listener to handle players choice 
 document.querySelectorAll('.choice_img').forEach(button => {
     button.addEventListener('click', () => {
+
         //read player choice
         let PlayerSelection = button.querySelector('img').alt.toLowerCase();
 
         //generate computer choice
         let ComputerSelection = getComputerChoice();
+        let Computer_element= document.getElementById('Computer_option');
+        Computer_element.textContent = "The computer chose:"+ComputerSelection.toString();
 
         //check if round is less thank 5
         if (completed_rounds < 5) {
             //play round for the current player selection
             let result = playRound(ComputerSelection, PlayerSelection);
-            //update points
-            let P_points = document.getElementById('PlayerPoints');
-            let C_points = document.getElementById('ComputerPoints');
+            //update result
+            updateScore(result);
 
-            //convert the text to int to use for mathematical operations
-            let PlayerPoints = parseInt(P_points.textContent);
-            let ComputerPoints = parseInt(C_points.textContent);
-
-
-            //check the result to update points
-            if (result && result.includes("You won!")) {
-                PlayerPoints++;
-                console.log(PlayerPoints);
-                //go back to string format
-                P_points.textContent = PlayerPoints.toString();
-            }
-            if (result && result.includes("You lost!")) {
-                ComputerPoints++;
-                //go back to string format
-                C_points.textContent = ComputerPoints.toString();
-            }
             //update round
             let R_number = document.getElementById('RoundNumber');
             let round_number = parseInt(R_number.textContent);
@@ -120,7 +117,6 @@ document.querySelectorAll('.choice_img').forEach(button => {
                 displayGameResult(PlayerPoints, ComputerPoints);
             }
         }
-        else completed_rounds = 0;
     })
 });
 
