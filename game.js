@@ -92,6 +92,7 @@ function resetGame() {
     document.getElementById("RoundResult").textContent = "";
     document.getElementById("game_over_result").textContent = "";
     document.getElementById("game_over").style.display = "none";
+    document.getElementById('Computer_option').textContent ='';
     
     }
 
@@ -105,7 +106,7 @@ document.querySelectorAll('.choice_img').forEach(button => {
         //generate computer choice
         let ComputerSelection = getComputerChoice();
         let Computer_element = document.getElementById('Computer_option');
-        Computer_element.textContent = "The computer chose:" + ComputerSelection.toString();
+        Computer_element.textContent = "R "+(completed_rounds+1)+" The computer chose:" + ComputerSelection.toString();
 
         //check if round is less thank 5
         if (completed_rounds < 5) {

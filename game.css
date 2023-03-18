@@ -8,7 +8,8 @@ body {
     text-align: center;
     align-items: center;
     color: white;
-    display:flex;
+    margin:0;
+    display: flex;
     flex-direction: column;
 
 }
@@ -36,7 +37,7 @@ h3 {
     flex-direction: row;
     flex-wrap: wrap;
     position: relative;
-    top: 80px;
+    margin-top: 0px;
     align-content: center;
 }
 
@@ -44,6 +45,7 @@ h3 {
 
     flex: 1;
     margin: 15px;
+    position:relative;
     border-radius: 50%;
 }
 
@@ -55,80 +57,116 @@ h3 {
 .play_container .choice_container .choice_img img {
     width: 100%;
     height: auto;
+}
 
+.play_container .choice_container:hover{
+    border: 2px solid yellow;
 }
 
 .round_container {
     position: relative;
-    top: 20px;
+    display: block;
+    top: 60px;
     text-align: center;
     align-items: center;
     justify-content: center;
 }
 
-.round_container p{
+.round_container p {
     font-family: 'Source Code Pro', monospace;
     font-size: 17px;
     text-align: center;
-    font-weight: 500;
-    line-height: 4px;
+    font-weight: 600;
+    line-height: 5px;
 
 }
 
+.round_container #Computer_option{
+    font-size: 15px;
+    text-align: center;
+    font-weight: 550;
+    line-height: 7px;
 
-.lives_container{
-    display:flex;
+}
+
+.round_container #RoundResult{
+    color: yellow;
+}
+
+.round_container hr{
+    width:100%;
+    margin-bottom: 25px;
+}
+.lives_container {
+    display: flex;
     flex-direction: row;
     position: relative;
-    top:0px;
-    width:100%;
+    top: 50px;
+    width: 100%;
+    
 }
 
-.player_container, 
-.computer_container{
+.player_container,
+.computer_container {
     flex: 1;
     justify-content: space-between;
-
+    width: fit-content;
 }
 
-#game_over{
+.lives_container p{
+    font-weight: 600;
+}
 
-    color:black;
-    background: red;
-    bottom:50%;
-    position:absolute;
-    align-items: center;
+
+#game_over {
+
+    color: black;
+    background: yellow;
+    display:none;
+    border:2px solid black;
+    bottom: 50%;
+    width:80%;
+    position: absolute;
     font-size: 20px;
 }
 
+#game_over_result{
+    font-weight: 600;
+}
 #try_again_button {
-   display: none;
-   text-align: center;
+    display: none;
+    text-align: center;
     align-items: center;
-    position: relative;
+    justify-content: center;
     width:100%;
-    font-size: 20px;
-    background:red;
-  }
-
-@media screen and (min-width: 1000px){
-    .play_container{
-        top:30px;
-        margin-left:130px;
-        margin-right:130px;
+    position: relative;
+    font-size: 23px;
+    font-weight: 700;
+    background: red;
+}
+#try_again_button:hover{
+    background-color: rgb(86, 24, 13);
+    color:yellow;
+}
+@media screen and (min-width: 1000px) {
+    .play_container {
+        top: 30px;
+        margin-left: 130px;
+        margin-right: 130px;
     }
 
-    .play_container .choice_container{
-        margin:60px;
+    .play_container .choice_container {
+        margin: 60px;
     }
 }
 
-@media screen and (max-width: 1000px){
-    .play_container{
-        top:30px;
+@media screen and (max-width: 1000px) {
+    .play_container {
+        top: 30px;
     }
 
-    .play_container .choice_container{
-        margin:10px;
+    .play_container .choice_container {
+        margin: 10px;
     }
-} 
+
+}
