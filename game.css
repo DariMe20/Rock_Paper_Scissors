@@ -4,7 +4,7 @@ body {
     background-attachment: fixed;
     background-position: center;
     /* border: 1px solid rgb(194, 95, 95); */
-    font-family: 'Source Sans Pro', sans-serif;
+    font-family: Arial, Helvetica, sans-serif;
     text-align: center;
     align-items: center;
     color: white;
@@ -14,7 +14,7 @@ body {
 }
 
 h1 {
-    font-family: 'Source Code Pro', monospace;
+    /* font-family: 'Source Code Pro', monospace; */
     position: relative;
 }
 
@@ -25,7 +25,7 @@ hr {
 }
 
 h3 {
-    font-family: 'Source Code Pro', monospace;
+    /* font-family: 'Source Code Pro', monospace; */
     display: block;
     position: relative;
     font-size: 20px;
@@ -68,11 +68,10 @@ h3 {
 
 .round_container p{
     font-family: 'Source Code Pro', monospace;
-    font-size: 22px;
-    background: black;
-    width: fit-content;
+    font-size: 17px;
     text-align: center;
     font-weight: 500;
+    line-height: 1px;
 
 }
 

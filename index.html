@@ -1,18 +1,20 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="preconnect" href="https://fonts.gstatic.com">
-    <link href="https://fonts.googleapis.com/css2?family=Source+Code+Pro%7CSource+Sans+Pro&display=swap" rel="stylesheet">
-        <title>Rock, Paper, Scissors</title>
+    <!-- <link href="https://fonts.googleapis.com/css2?family=Source+Code+Pro%7CSource+Sans+Pro&display=swap" rel="stylesheet"> -->
+    <title>Rock, Paper, Scissors</title>
     <link rel="stylesheet" href="game.css">
-    
-    
+
+
 </head>
+
 <body>
-   
+
     <!-- <div class="opening_container">
         <p>Long, long ago...you were locked by a wicken AI into a virtual world.</p>
         <p>After many battles to come back in the real world, you finally reached the final boss.</p>
@@ -25,30 +27,27 @@
     <hr>
     <h3>Choose your fate</h3>
     <div class="play_container">
-          
+
         <div class="choice_container">
-            <button class="choice_img" onclick="playRound('rock')">
-                <img src ="rock.png" 
-                alt="Image of rock hand sign">
+            <button class="choice_img" onclick="playRound(getComputerChoice(), 'rock')">
+                <img src="rock.png" alt="rock">
             </button>
 
         </div>
         <div class="choice_container">
-            <button class="choice_img" onclick="playRound('paper')">
-                <img src ="paper.png"
-                alt="Image of paper hand sign">
+            <button class="choice_img"  onclick="playRound(getComputerChoice(), 'paper')">
+                <img src="paper.png" alt="paper">
             </button>
         </div>
         <div class="choice_container">
-            <button class="choice_img" onclick="playRound('scissors')">
-                <img src ="scissors.png" 
-                alt="Image of paper hand sign">
+            <button class="choice_img"  onclick="playRound(getComputerChoice(), 'scissors')">
+                <img src="scissors.png" alt="scissors">
             </button>
         </div>
     </div>
 
     <div class="round_container">
-        <p id="RoundNumber"></p>
+        <p>Round<p id="RoundNumber">0</p></p>
         <p id="RoundResult"></p>
 
     </div>
@@ -61,7 +60,7 @@
         <div class="computer_container">
             <p>Final Boss</p>
             <p id="ComputerPoints">0</p>
-            
+
         </div>
     </div>
 
@@ -69,6 +68,7 @@
         <p id="game_over_result"></p>
 
     </div>
-     <script src="game.js"></script>
+    <script src="game.js"></script>
 </body>
+
 </html>
