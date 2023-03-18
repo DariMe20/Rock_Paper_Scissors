@@ -70,6 +70,7 @@ function displayGameResult(PlayerPoints, ComputerPoints) {
     document.getElementById("game_over_result").textContent = result;
     document.getElementById("game_over").style.display = "block";
     document.getElementById("try_again_button").style.display = "block";
+
 }
 
 //function to reset the game
@@ -81,10 +82,10 @@ function resetGame() {
     document.getElementById("ComputerPoints").textContent = "0";
     document.getElementById("RoundNumber").textContent = "0";
     document.getElementById("RoundResult").textContent = "";
-    document.getElementById("game_over_result").textContent = ""; // reset game_over_result
+    document.getElementById("game_over_result").textContent = "";
     document.getElementById("game_over").style.display = "none";
     document.getElementById("try_again_button").style.display = "none";
-}
+    }
 
 //adding an event listener to handle players choice
 document.querySelectorAll('.choice_img').forEach(button => {
@@ -122,6 +123,9 @@ document.querySelectorAll('.choice_img').forEach(button => {
                 let game_over_result_elem = document.getElementById('game_over_result');
                 GameOver.style.display = 'block';
                 displayGameResult(PlayerPoints, ComputerPoints);
+
+                 // Show the try again button
+            document.getElementById("try_again_button").style.display = "block";
             }
              if (completed_rounds % 5 == 0) {
             resetGame();

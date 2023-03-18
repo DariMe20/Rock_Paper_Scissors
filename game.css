@@ -60,7 +60,7 @@ h3 {
 
 .round_container {
     position: relative;
-    top: 60px;
+    top: 20px;
     text-align: center;
     align-items: center;
     justify-content: center;
@@ -80,7 +80,7 @@ h3 {
     display:flex;
     flex-direction: row;
     position: relative;
-    top:50px;
+    top:0px;
     width:100%;
 }
 
@@ -93,16 +93,23 @@ h3 {
 
 .game_over{
 
-    color:red;
-    position: relative;
-    top:20px;
+    color:black;
+    background: red;
+    bottom:50%;
+    position:absolute;
     align-items: center;
+
 }
 
 .game_over button{
     text-align: center;
     align-items: center;
+    background:red;
 }
+
+#try_again_button {
+   display: none;
+  }
 
 @media screen and (min-width: 1000px){
     .play_container{
