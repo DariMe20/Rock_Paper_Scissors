@@ -70,6 +70,11 @@ document.querySelectorAll('.choice_container button').forEach(button => {
         //increment round and convert back to string
         R_number.textContent = (round_number + 1).toString();
 
+        //display result
+        let result_Element = document.getElementById('RoundResult');
+        result_Element.textContent = result; //the result is generated after the playRound function
+
+        //check if game is over
         
     }) 
 })
