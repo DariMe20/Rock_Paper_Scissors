@@ -102,13 +102,16 @@ h3 {
 }
 
 .game_over button{
-    text-align: center;
-    align-items: center;
+    
     background:red;
 }
 
 #try_again_button {
    display: none;
+   text-align: center;
+    align-items: center;
+    position: relative;
+    width:100%;
   }
 
 @media screen and (min-width: 1000px){

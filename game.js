@@ -14,6 +14,8 @@ function getComputerChoice() {
 //function to return the result of the round 
 function playRound(ComputerSelection, PlayerSelection) {
     if (completed_rounds === 5) {
+        let tryAgainButton = document.getElementById("try_again_button");
+        tryAgainButton.style.display = "block";
         displayGameResult(PlayerPoints, ComputerPoints);
     }
 
@@ -75,6 +77,8 @@ function displayGameResult(PlayerPoints, ComputerPoints) {
 
 //function to reset the game
 function resetGame() {
+    if(completed_rounds == 5)
+        document.getElementById("try_again_button").style.display = "none";
     completed_rounds = 0;
     PlayerPoints = 0;
     ComputerPoints = 0;
@@ -84,7 +88,7 @@ function resetGame() {
     document.getElementById("RoundResult").textContent = "";
     document.getElementById("game_over_result").textContent = "";
     document.getElementById("game_over").style.display = "none";
-    document.getElementById("try_again_button").style.display = "none";
+    
     }
 
 //adding an event listener to handle players choice
@@ -123,23 +127,20 @@ document.querySelectorAll('.choice_img').forEach(button => {
                 let game_over_result_elem = document.getElementById('game_over_result');
                 GameOver.style.display = 'block';
                 displayGameResult(PlayerPoints, ComputerPoints);
-
-                 // Show the try again button
-            document.getElementById("try_again_button").style.display = "block";
+                
             }
-             if (completed_rounds % 5 == 0) {
-            resetGame();
-            }
+            if (completed_rounds % 5 == 0) {
+              resetGame();
+            } 
         }
-
-       
-
     })
 });
 
 //Add event listener to reset the game when try again button is pressed
 document.getElementById('try_again_button').addEventListener('click', () => {
     resetGame();
+    let tryAgainButton = document.getElementById("try_again_button");
+    tryAgainButton.style.display = "none";
 });
 
 
