@@ -81,12 +81,12 @@ function resetGame() {
     document.getElementById("ComputerPoints").textContent = "0";
     document.getElementById("RoundNumber").textContent = "0";
     document.getElementById("RoundResult").textContent = "";
+    document.getElementById("game_over_result").textContent = ""; // reset game_over_result
     document.getElementById("game_over").style.display = "none";
     document.getElementById("try_again_button").style.display = "none";
 }
 
-
-//adding an event listener to handle players choice 
+//adding an event listener to handle players choice
 document.querySelectorAll('.choice_img').forEach(button => {
     button.addEventListener('click', () => {
 
@@ -108,11 +108,6 @@ document.querySelectorAll('.choice_img').forEach(button => {
             //update round
             let R_number = document.getElementById('RoundNumber');
             let round_number = parseInt(R_number.textContent);
-            if (round_number == 5) {
-                round_number = 0; // reset round number to 0
-                P_points.textContent = "0";
-                C_points.textContent = "0";
-            }
 
             //increment round and convert back to string
             R_number.textContent = (round_number + 1).toString();
@@ -122,17 +117,18 @@ document.querySelectorAll('.choice_img').forEach(button => {
 
             completed_rounds++;
             //check if game is over
-            if (round_number == 5) {
+            if (completed_rounds == 5) {
                 let GameOver = document.getElementById('game_over');
                 let game_over_result_elem = document.getElementById('game_over_result');
                 GameOver.style.display = 'block';
                 displayGameResult(PlayerPoints, ComputerPoints);
             }
+             if (completed_rounds % 5 == 0) {
+            resetGame();
+            }
         }
 
-        if (completed_rounds % 5 == 0) {
-            resetGame();
-        }
+       
 
     })
 });
