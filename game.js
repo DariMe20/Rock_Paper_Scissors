@@ -15,8 +15,8 @@ function getComputerChoice() {
 function playRound(ComputerSelection, PlayerSelection) {
     if (completed_rounds === 5) {
         displayGameResult(PlayerPoints, ComputerPoints);
-        }
-    
+    }
+
     if (ComputerSelection === PlayerSelection) {
         return "It's a draw";
     }
@@ -72,6 +72,18 @@ function displayGameResult(PlayerPoints, ComputerPoints) {
     document.getElementById("try_again_button").style.display = "block";
 }
 
+//function to reset the game
+function resetGame() {
+    completed_rounds = 0;
+    PlayerPoints = 0;
+    ComputerPoints = 0;
+    document.getElementById("PlayerPoints").textContent = "0";
+    document.getElementById("ComputerPoints").textContent = "0";
+    document.getElementById("RoundNumber").textContent = "0";
+    document.getElementById("RoundResult").textContent = "";
+    document.getElementById("game_over").style.display = "none";
+    document.getElementById("try_again_button").style.display = "none";
+}
 
 
 //adding an event listener to handle players choice 
@@ -83,8 +95,8 @@ document.querySelectorAll('.choice_img').forEach(button => {
 
         //generate computer choice
         let ComputerSelection = getComputerChoice();
-        let Computer_element= document.getElementById('Computer_option');
-        Computer_element.textContent = "The computer chose:"+ComputerSelection.toString();
+        let Computer_element = document.getElementById('Computer_option');
+        Computer_element.textContent = "The computer chose:" + ComputerSelection.toString();
 
         //check if round is less thank 5
         if (completed_rounds < 5) {
@@ -117,9 +129,18 @@ document.querySelectorAll('.choice_img').forEach(button => {
                 displayGameResult(PlayerPoints, ComputerPoints);
             }
         }
+
+        if (completed_rounds % 5 == 0) {
+            resetGame();
+        }
+
     })
 });
 
+//Add event listener to reset the game when try again button is pressed
+document.getElementById('try_again_button').addEventListener('click', () => {
+    resetGame();
+});
 
 
 // function game(computerSelection) {
