@@ -73,6 +73,10 @@ function displayGameResult(PlayerPoints, ComputerPoints) {
     document.getElementById("game_over").style.display = "block";
     document.getElementById("try_again_button").style.display = "block";
 
+      // Disable all choice buttons when game is over
+      document.querySelectorAll('.choice_img').forEach(button => {
+        button.disabled = true;
+    });
 }
 
 //function to reset the game
@@ -141,6 +145,9 @@ document.getElementById('try_again_button').addEventListener('click', () => {
     resetGame();
     let tryAgainButton = document.getElementById("try_again_button");
     tryAgainButton.style.display = "none";
+    // Disable all choice buttons when game is over
+    document.querySelectorAll('.choice_img').forEach(button => {
+        button.disabled = false;})
 });
 
 

@@ -98,12 +98,7 @@ h3 {
     bottom:50%;
     position:absolute;
     align-items: center;
-
-}
-
-#game_over button{
-    
-    background:red;
+    font-size: 20px;
 }
 
 #try_again_button {
@@ -112,6 +107,8 @@ h3 {
     align-items: center;
     position: relative;
     width:100%;
+    font-size: 20px;
+    background:red;
   }
 
 @media screen and (min-width: 1000px){
