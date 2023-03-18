@@ -15,50 +15,29 @@ function resetGame() {
     completed_rounds = 0;
     PlayerPoints = 0;
     ComputerPoints = 0;
-    let P_points = document.getElementById('PlayerPoints');
-    let C_points = document.getElementById('ComputerPoints');
-    let R_number = document.getElementById('RoundNumber');
-    let result_Element = document.getElementById('RoundResult');
-    P_points.textContent = "0";
-    C_points.textContent = "0";
-    R_number.textContent = "1";
-    result_Element.textContent = "";
+    document.getElementById("PlayerPoints").textContent = "0";
+    document.getElementById("ComputerPoints").textContent = "0";
+    document.getElementById("RoundNumber").textContent = "1";
+    document.getElementById("RoundResult").textContent = "";
+    document.getElementById("game_over").style.display = "none";
+    document.getElementById("try_again_button").style.display = "none";
 }
 
 function playRound(ComputerSelection, PlayerSelection) {
     if (completed_rounds === 5) {
-        if (PlayerPoints > ComputerPoints) {
-            let result = "Congratulations! You have won the game!";
-            let GameOver = document.getElementById('game_over');
-            let game_over_result_elem = document.getElementById('game_over_result');
-            GameOver.style.display = 'block';
-            game_over_result_elem.textContent = result;
-            let try_again_button = document.getElementById('try_again_button');
-            try_again_button.style.display = 'block';
-        } else if (ComputerPoints > PlayerPoints) {
-            let result = "Sorry! The computer has won the game";
-            let GameOver = document.getElementById('game_over');
-            let game_over_result_elem = document.getElementById('game_over_result');
-            GameOver.style.display = 'block';
-            game_over_result_elem.textContent = result;
-            let try_again_button = document.getElementById('try_again_button');
-            try_again_button.style.display = 'block';
-        } else {
-            let result = "It's a draw! Good Game!";
-            let GameOver = document.getElementById('game_over');
-            let game_over_result_elem = document.getElementById('game_over_result');
-            GameOver.style.display = 'block';
-            game_over_result_elem.textContent = result;
-            let try_again_button = document.getElementById('try_again_button');
-            try_again_button.style.display = 'block';
-        }
-        return;
+        if (completed_rounds === 5) {
+            if (PlayerPoints > ComputerPoints) {
+              return "Congratulations! You have won the game!";
+            } else if (ComputerPoints > PlayerPoints) {
+              return "Sorry! The computer has won the game";
+            } else {
+              return "It's a draw! Good Game!";
+            }
+          }
     }
     if (ComputerSelection === PlayerSelection) {
         return "It's a draw";
     }
-
-
     if (ComputerSelection == "rock") {
         if (PlayerSelection == "paper")
             return "You won! Paper beats Rock!";
@@ -79,18 +58,9 @@ function playRound(ComputerSelection, PlayerSelection) {
         else if (PlayerSelection == "paper")
             return "You lost! Scissors beats Paper!";
     }
-
-    if (completed_rounds == 5) {
-        if (PlayerPoints > ComputerPoints) {
-            return "Congratulations! You have won the game!";
-        } else if (ComputerPoints > PlayerPoints) {
-            return "Sorry! The computer has won the game";
-        } else {
-            return "It's a draw! Good Game!";
-        }
-    }
-
 }
+
+
 
 //adding an event listener to handle players choice 
 document.querySelectorAll('.choice_img').forEach(button => {
