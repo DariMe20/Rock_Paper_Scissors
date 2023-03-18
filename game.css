@@ -71,7 +71,7 @@ h3 {
     font-size: 17px;
     text-align: center;
     font-weight: 500;
-    line-height: 2px;
+    line-height: 4px;
 
 }
 
@@ -91,7 +91,7 @@ h3 {
 
 }
 
-.game_over{
+#game_over{
 
     color:black;
     background: red;
@@ -101,7 +101,7 @@ h3 {
 
 }
 
-.game_over button{
+#game_over button{
     
     background:red;
 }

@@ -84,7 +84,7 @@ function resetGame() {
     ComputerPoints = 0;
     document.getElementById("PlayerPoints").textContent = "0";
     document.getElementById("ComputerPoints").textContent = "0";
-    document.getElementById("RoundNumber").textContent = "0";
+    document.getElementById("RoundNumber").textContent = "1";
     document.getElementById("RoundResult").textContent = "";
     document.getElementById("game_over_result").textContent = "";
     document.getElementById("game_over").style.display = "none";
@@ -122,14 +122,14 @@ document.querySelectorAll('.choice_img').forEach(button => {
 
             completed_rounds++;
             //check if game is over
-            if (completed_rounds == 5) {
-                let GameOver = document.getElementById('game_over');
+            if (completed_rounds == 4) {
+                let GameOver = document.getElementById("game_over");
                 let game_over_result_elem = document.getElementById('game_over_result');
-                GameOver.style.display = 'block';
+                GameOver.style.display = "block";
                 displayGameResult(PlayerPoints, ComputerPoints);
                 
             }
-            if (completed_rounds % 5 == 0) {
+            if (completed_rounds == 5) {
               resetGame();
             } 
         }
@@ -182,10 +182,3 @@ document.getElementById('try_again_button').addEventListener('click', () => {
 // }
 
 //console.log(game());
-
-
-
-
-
-
-
