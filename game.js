@@ -119,21 +119,22 @@ document.querySelectorAll('.choice_img').forEach(button => {
             let round_number = parseInt(R_number.textContent);
 
             //increment round and convert back to string
-            R_number.textContent = (round_number + 1).toString();
+            R_number.textContent = (round_number+1).toString();
             //display result
             let result_Element = document.getElementById('RoundResult');
             result_Element.textContent = result; //the result is generated after the playRound function
 
             completed_rounds++;
             //check if game is over
-            if (completed_rounds == 4) {
+            if (completed_rounds == 5) {
                 let GameOver = document.getElementById("game_over");
                 let game_over_result_elem = document.getElementById('game_over_result');
                 GameOver.style.display = "block";
                 displayGameResult(PlayerPoints, ComputerPoints);
-                
+                round_number = 0;
+                R_number.textContent = (round_number).toString();
             }
-            if (completed_rounds == 5) {
+            if (completed_rounds == 6) {
               resetGame();
             } 
         }
