@@ -35,7 +35,7 @@ function playRound(ComputerSelection, PlayerSelection) {
 }
 
 //adding an event listener to handle players choice 
-document.querySelectorAll('.choice_container button').forEach(button => {
+document.querySelectorAll('.choice_img').forEach(button => {
     button.addEventListener('click', () => {
         //read player choice
         let PlayerSelection = button.querySelector('img').alt.toLowerCase();
@@ -75,7 +75,18 @@ document.querySelectorAll('.choice_container button').forEach(button => {
         result_Element.textContent = result; //the result is generated after the playRound function
 
         //check if game is over
-        
+        if(round_number == 5)
+        {
+            let GameOver = document.getElementById('game_over');
+            let game_over_result_elem = document.getElementById('game_over_result');
+            GameOver.style.display = 'block';
+            if(PlayerPoints > ComputerPoints)
+                GameOver.textContent = "You win";
+            if(ComputerPoints > PlayerPoints)
+            GameOver.textContent = "The computer wins";
+            if(ComputerPoints == PlayerPoints)
+            GameOver.textContent = "Equal scores - it's a draw";
+        }
     }) 
 })
    
