@@ -1,5 +1,6 @@
 
 let options = ["rock", "paper", "scissors"];
+let completed_rounds = 0;
 
 //function to generate random option between Rock, Paper and Scissors
 function getComputerChoice() {
@@ -51,6 +52,7 @@ document.querySelectorAll('.choice_img').forEach(button => {
         //update points
         let P_points = document.getElementById('PlayerPoints');
         let C_points = document.getElementById('ComputerPoints');
+
         //convert the text to int to use for mathematical operations
         let PlayerPoints = parseInt(P_points.textContent);
         let ComputerPoints = parseInt(C_points.textContent);
@@ -72,8 +74,15 @@ document.querySelectorAll('.choice_img').forEach(button => {
         //update round
         let R_number = document.getElementById('RoundNumber');
         let round_number = parseInt(R_number.textContent);
+        if (round_number == 5) {
+            round_number = 0; // reset round number to 0
+            P_points.textContent = "0";
+            C_points.textContent = "0";
+            }
+    
         //increment round and convert back to string
         R_number.textContent = (round_number + 1).toString();
+            
 
         //display result
         let result_Element = document.getElementById('RoundResult');
@@ -84,16 +93,21 @@ document.querySelectorAll('.choice_img').forEach(button => {
             let GameOver = document.getElementById('game_over');
             let game_over_result_elem = document.getElementById('game_over_result');
             GameOver.style.display = 'block';
-            if (PlayerPoints > ComputerPoints) {
-                game_over_result_elem.textContent = "You win";
-            } else if (ComputerPoints > PlayerPoints) {
-                game_over_result_elem.textContent = "The computer wins";
-            } else
-                game_over_result_elem.textContent = "Equal scores - it's a draw";
+            displayGameResult(PlayerPoints, ComputerPoints);
         }
     })
 });
 
+    function displayGameResult(PlayerPoints, ComputerPoints){
+        let final_message_Element = document.getElementById('final_message');
+        if (PlayerPoints > ComputerPoints) {
+            final_message_Element.textContent = "Congratulations! You have won the game!";
+          } else if (ComputerPoints > PlayerPoints) {
+            final_message_Element.textContent = "Sorry! The computer has won the game";
+          } else {
+            final_message_Element.textContent = "It's a draw! Good Game!";
+          }
+    }
 
 // function game(computerSelection) {
 //     let PlayerPoints = 0;
