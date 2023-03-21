@@ -1,4 +1,5 @@
 # Rock_Paper_Scissors
+Live at: https://darime20.github.io/Rock_Paper_Scissors/  
 This is a basic game of Rock Paper Scissors where you play against the computer.  
 After 5 rounds the winner is annouced and the game may start again.  
 Through this project I have learned:  
